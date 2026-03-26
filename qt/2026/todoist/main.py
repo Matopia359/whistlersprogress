@@ -1,8 +1,16 @@
 import sys
 from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout, QCheckBox
+from PySide6.QtGui import QIcon
 from widget import Widget
 app = QApplication(sys.argv)
 window = Widget()  
+window.setWindowTitle("todoist")
+if sys.platform.startswith("win"):
+    window.setWindowIcon(QIcon("icon.ico"))   # icon for windows Windows
+else:
+    window.setWindowIcon(Qicon("icon.png")) #icon for linux
+    
+    
 frame = window.ui.todoframe
 layout = QVBoxLayout()
 frame.setLayout(layout) 
